@@ -17,4 +17,5 @@ make_dir::
 	mkdir -p $(OBJ_DIR)
 
 kconfig-frontends::
+#	git clone https://github.com/movidius/kconfig-frontends.git
 	cd kconfig-frontends &&	autoreconf -fi && ./configure && make
