@@ -1,18 +1,20 @@
 OBJ_DIR = ./obj
 SOURCE_DIR = .
 
-all: make_dir $(OBJ_DIR)/someapp
+all:: make_dir $(OBJ_DIR)/someapp
 	$(OBJ_DIR)/someapp
 
-clean:
+clean::
 	rm -f $(OBJ_DIR)/*
 
-clobber:
+clobber::
 	rm -rf $(OBJ_DIR)
 
 $(OBJ_DIR)/someapp: $(SOURCE_DIR)/someapp.c
 	$(CC) $< -o $@
 
-make_dir:
+make_dir::
 	mkdir -p $(OBJ_DIR)
 
+kconfig-frontends::
+	cd kconfig-frontends &&	autoreconf -fi && ./configure && make
