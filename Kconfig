@@ -1,23 +1,35 @@
-choice SELECT_DESTINATION
-    prompt "Select data destination"
-    default DESTINATION_TTY
+config FEATURE_A
+      bool "Compile FEATURE_A"
+      help
+        Compile Feature A
+		Use this to enabled Feature A in someapp.
+		Not included by default
 
-config SELECT_DESTINATION_TTY
-    bool "show data in console"
-config SELECT_DESTINATION_FILE
-    bool "save data to file"
-endchoice
+config FEATURE_B
+      bool "Compile FEATURE_B"
+      help
+        Compile Feature B
+		Use this to enabled Feature B in someapp.
+		Not included by default
+
+config FEATURE_C
+      bool "Compile FEATURE_C"
+      help
+        Compile Feature C
+		Use this to enabled Feature C in someapp.
+		Not included by default
 
 
-config SELECT_DESTINATION_FILE_FILENAME
-    string "destination file"
-    depends on SELECT_DESTINATION_FILE
-    default "last.log"
-    help
-      Write destination file with relative or full path
+config FEATURE_D
+      bool "Compile FEATURE_D"
+      help
+        Compile Feature D
+		Use this to enabled Feature D in someapp.
+		Not included by default
 
-config SHOW_ONLY_CURRENT_USER
-    bool "show data only for current user"
-    default y
-    help
-      script will get data only for currewnt user
+config FEATURE_E
+      bool "Compile FEATURE_E"
+      help
+        Compile Feature E
+		Use this to enabled Feature E in someapp.
+		Not included by default
