@@ -2,7 +2,11 @@ OBJ_DIR = ./obj
 SOURCE_DIR = ./src
 
 
-include .config
+ifneq ("$(wildcard .config)","")
+
+CONFIG_FILE = .config
+
+include $(CONFIG_FILE)
 
 ifeq ($(CONFIG_FEATURE_A),y)
 	CFLAGS += -DFEATURE_A
@@ -24,7 +28,9 @@ ifeq ($(CONFIG_FEATURE_E),y)
 	CFLAGS += -DFEATURE_E
 endif
 
-all:: make_dir $(OBJ_DIR)/someapp
+endif # ifneq ("$(wildcard .config)","")
+
+all:: make_dir warn_config_file $(OBJ_DIR)/someapp
 	$(OBJ_DIR)/someapp
 
 clean::
@@ -33,7 +39,7 @@ clean::
 clobber::
 	rm -rf $(OBJ_DIR)
 
-$(OBJ_DIR)/someapp: $(SOURCE_DIR)/someapp.c .config
+$(OBJ_DIR)/someapp: $(SOURCE_DIR)/someapp.c $(CONFIG_FILE)
 	$(CC) $(CFLAGS) $< -o $@
 
 make_dir::
@@ -44,5 +50,9 @@ menuconfig:: kconfig-frontends
 
 kconfig-frontends:
 	git clone https://github.com/movidius/kconfig-frontends.git
-	cd kconfig-frontends &&	autoreconf -fi && ./configure && make
+	cd kconfig-frontends && autoreconf -fi && ./configure && make
 
+warn_config_file:
+ifndef CONFIG_FILE
+	echo "Warning!!: .config file not found. Building with all configurable features disabled."
+endif
