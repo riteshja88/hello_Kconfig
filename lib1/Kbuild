@@ -1,0 +1,31 @@
+ifndef CONFIG
+CONFIG = .config
+endif 
+
+ifneq ("$(wildcard $(CONFIG))","")
+
+CONFIG_FILE = $(CONFIG)
+
+include $(CONFIG_FILE)
+
+ifeq ($(CONFIG_FEATURE_1),y)
+	CFLAGS += -DFEATURE_1
+endif
+
+ifeq ($(CONFIG_FEATURE_1_1),y)
+	CFLAGS += -DFEATURE_1_1
+endif
+
+ifeq ($(CONFIG_FEATURE_1_2),y)
+	CFLAGS += -DFEATURE_1_2
+endif
+
+ifeq ($(CONFIG_FEATURE_2),y)
+	CFLAGS += -DFEATURE_2
+endif
+
+ifeq ($(CONFIG_FEATURE_2_1),y)
+	CFLAGS += -DFEATURE_2_1
+endif
+
+endif # ifneq ("$(wildcard .config)","")

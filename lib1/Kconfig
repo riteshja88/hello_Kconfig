@@ -1,0 +1,45 @@
+config LIBSTATICOUTPUTFILE
+	string "Output Static Library(.a) file name"
+	default lib1.a
+	help
+		Output Static Library(.a) file name
+		Use this to specify name of output static
+		library file
+	 
+config FEATURE_1
+	bool "Compile Feature 1"
+	help
+		Compile Feature 1
+		Use this to enabled Feature 1 in lib1.
+		Not included by default
+
+config FEATURE_1_1
+	bool "Compile Feature 1.1"
+	depends on FEATURE_1
+	help
+		Compile Feature 1.1
+		Use this to enabled Feature 1.1 in lib1.
+		Not included by default
+
+config FEATURE_1_2
+	bool "Compile Feature 1.2"
+	depends on FEATURE_1
+	help
+		Compile Feature 1.2
+		Use this to enabled Feature 1.2 in lib1.
+		Not included by default
+
+config FEATURE_2
+	bool "Compile Feature 2"
+	help
+		Compile Feature 2
+		Use this to enabled Feature 2 in lib1.
+		Not included by default
+
+config FEATURE_2_1
+	bool "Compile Feature 2.1"
+	depends on FEATURE_2
+	help
+		Compile Feature 2.1
+		Use this to enabled Feature 2.1 in lib1.
+		Not included by default
