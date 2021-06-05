@@ -31,6 +31,7 @@ void print_lib1_features(const char * const app)
 
 ## App1
 ```
+#cc -DFEATURE_1 -DFEATURE_1_1 -DFEATURE_2 -DFEATURE_2_1 -c src/somelib.c -o obj/somelib.o
 Hello World!! from App1
 app=App1 lib=lib1 Hello World!
 app=App1 lib=lib1 Feature 1
@@ -41,6 +42,7 @@ app=App1 lib=lib1 Feature 2.1
 
 ## App2
 ```
+#cc -DFEATURE_1 -DFEATURE_1_2 -DFEATURE_2 -c src/somelib.c -o obj/somelib.o
 Hello World!! from App2
 app=App2 lib=lib1 Hello World!
 app=App2 lib=lib1 Feature 1
