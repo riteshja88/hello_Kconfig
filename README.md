@@ -49,3 +49,11 @@ app=App2 lib=lib1 Feature 1
 app=App2 lib=lib1 Feature 1.2
 app=App2 lib=lib1 Feature 2
 ```
+
+## Lib1
+```
+cd lib1 && make menuconfig
+```
+<img width="946" alt="image" src="https://user-images.githubusercontent.com/2250378/121670605-3fa6cd00-cacb-11eb-938c-4577c655c0fa.png">
+
+```
