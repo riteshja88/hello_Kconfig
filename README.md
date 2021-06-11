@@ -57,3 +57,5 @@ cd lib1 && make menuconfig
 <img width="946" alt="image" src="https://user-images.githubusercontent.com/2250378/121670605-3fa6cd00-cacb-11eb-938c-4577c655c0fa.png">
 
 ```
+
+<img width="943" alt="image" src="https://user-images.githubusercontent.com/2250378/121670847-84caff00-cacb-11eb-9520-b7b186e0126c.png">
